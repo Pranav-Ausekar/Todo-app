@@ -59,7 +59,9 @@ export async function login(req, res, next) {
     // send created token to the client
     res.cookie("access_token", token, {
         httpOnly: true, // makes cookie inaccessiable to javascript, only server can access the cookie
-        secure: process.env.NODE_ENV === "production"
+        // secure: process.env.NODE_ENV === "production"
+        secure: true, // Must be true for cross-origin requests
+        sameSite: "None" // Allows sending cookies across domains
     })
         .status(200)
         .json("User logged in!");
