@@ -16,7 +16,7 @@ const corsOptions = {
 }
 
 const app = express()
-const PORT = 3000;
+// const PORT = 3000;
 
 dotenv.config() // to read the values from .env file
 app.use(cors(corsOptions));
@@ -38,6 +38,8 @@ app.use((err, req, res, next) => {
 
     res.status(statusCode).json({ error: message })
 });
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`)
