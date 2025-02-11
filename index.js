@@ -11,7 +11,7 @@ import cors from "cors";
 
 
 const corsOptions = {
-    origin: "http://localhost:5173", // to allow access from this localhost
+    origin: ["http://localhost:5173", "https://todo-front-end-black.vercel.app"], // ✅ Add Vercel frontend URL
     credentials: true  // to pass cookies from backend to frontend
 }
 
